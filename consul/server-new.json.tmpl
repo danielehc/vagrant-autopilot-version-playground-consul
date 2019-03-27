@@ -1,0 +1,26 @@
+{
+  "bind_addr": "@@BIND_ADDR@@",
+  "data_dir": "/data/consul",
+  "ui": true,
+  "addresses": {
+    "http": "0.0.0.0"
+  },
+  "retry_join": [
+    "consul0",
+    "consul1",
+    "consul2"
+  ],
+  "server": true,
+  "bootstrap_expect": 3,
+  "autopilot": {
+    "cleanup_dead_servers": true,
+    "disable_upgrade_migration": false,
+    "last_contact_threshold": "100ms",
+    "max_trailing_logs": 250,
+    "server_stabilization_time": "1s",
+    "upgrade_version_tag": "build"
+  },
+  "node_meta": {
+    "build": "2.0.0"
+  }
+}
